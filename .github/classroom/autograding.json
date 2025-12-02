@@ -1,0 +1,74 @@
+{
+  "tests": [
+    {
+      "name": "Install Dependencies",
+      "setup": "npm install",
+      "run": "echo 'Dependencies installed successfully'",
+      "input": "",
+      "output": "Dependencies installed successfully",
+      "comparison": "included",
+      "timeout": 15,
+      "points": null
+    },
+    {
+      "name": "Database Schema Tests",
+      "setup": "npm run db:generate",
+      "run": "npm test -- --run tests/db.test.js",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 15,
+      "points": 25
+    },
+    {
+      "name": "API Routes Tests",
+      "setup": "npm run db:push",
+      "run": "npm test -- --run tests/api.test.js",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 20,
+      "points": 35
+    },
+    {
+      "name": "File Structure Tests",
+      "setup": "",
+      "run": "npm test -- --run tests/portfolio.test.js",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "Database Connection Test",
+      "setup": "",
+      "run": "node -e \"const { PrismaClient } = require('@prisma/client'); const prisma = new PrismaClient(); prisma.$connect().then(() => { console.log('Database connection successful'); prisma.$disconnect(); }).catch(e => { console.error('Database connection failed:', e.message); process.exit(1); });\"",
+      "input": "",
+      "output": "Database connection successful",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Seed Data Implementation",
+      "setup": "",
+      "run": "npm run db:seed",
+      "input": "",
+      "output": "Seeding finished",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Build Test",
+      "setup": "",
+      "run": "npm run build",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 15,
+      "points": 5
+    }
+  ]
+}

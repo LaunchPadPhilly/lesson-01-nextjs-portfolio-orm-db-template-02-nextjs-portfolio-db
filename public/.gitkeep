@@ -1,0 +1,53 @@
+# Public Folder - Place Your Images Here
+
+This folder is for **static files** that can be accessed directly via URL.
+
+## What Goes Here
+
+- Profile photos
+- Project screenshots
+- Icons and logos
+- Any images you want to use on your site
+
+## How to Use Images
+
+### Step 1: Add your image to this folder
+
+```
+public/
+  └── my-photo.jpg  ← Your image here
+```
+
+### Step 2: Use the Image component in your pages
+
+```javascript
+import Image from 'next/image'
+
+<Image 
+  src="/my-photo.jpg"  // Note: starts with / (not public/)
+  alt="Description of image"
+  width={500}
+  height={300}
+/>
+```
+
+## Image Requirements
+
+- **Supported formats:** JPG, PNG, WebP, GIF, SVG
+- **Recommended size:** Under 1MB per image
+- **Profile photos:** 300x300px or larger
+- **Project images:** 800x600px recommended
+
+## Need Placeholder Images?
+
+Use these free services:
+
+- **Unsplash:** https://unsplash.com (free stock photos)
+- **UI Avatars:** https://ui-avatars.com (generated profile pics)
+- **PlaceHolder:** https://placehold.co (placeholder images)
+
+## Important Notes
+
+- Always include an `alt` attribute for accessibility
+- File names should be lowercase with no spaces (use-dashes-instead)
+- Don't commit very large images (they slow down your repo)
