@@ -58,10 +58,10 @@ export default function ProjectForm({ isOpen, onSubmit, onCancel } = {}) {
     const formData = {
       title,
       description,
-      imageUrl,
-      projectUrl,
-      githubUrl,
-      technologies,
+      imageUrl: imageUrl || "",
+      projectUrl: projectUrl || "",
+      githubUrl: githubUrl || "",
+      technologies: technologies || []
     };
 
     onSubmit?.(formData); // send the data to the parent
@@ -79,7 +79,7 @@ export default function ProjectForm({ isOpen, onSubmit, onCancel } = {}) {
           <label htmlFor="title">Project Title</label>
           <input
             id="title"
-            aria-label="Project Title"
+            placeholder="Project Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className={`border p-2 rounded w-full ${
@@ -94,7 +94,7 @@ export default function ProjectForm({ isOpen, onSubmit, onCancel } = {}) {
           <label htmlFor="description">Description</label>
           <textarea
             id="description"
-            aria-label="Description"
+            placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className={`border p-2 rounded w-full ${
@@ -111,7 +111,7 @@ export default function ProjectForm({ isOpen, onSubmit, onCancel } = {}) {
           <label htmlFor="imageUrl">Image URL</label>
           <input
             id="imageUrl"
-            aria-label="Image URL"
+            placeholder="Image URL"
             value={imageUrl || ""}
             onChange={(e) => setImageUrl(e.target.value || null)}
             className="border p-2 rounded w-full"
@@ -126,7 +126,7 @@ export default function ProjectForm({ isOpen, onSubmit, onCancel } = {}) {
           <label htmlFor="projectUrl">Project URL</label>
           <input
             id="projectUrl"
-            aria-label="Project URL"
+            placeholder="Project URL"
             value={projectUrl || ""}
             onChange={(e) => setProjectUrl(e.target.value || null)}
             className="border p-2 rounded w-full"
@@ -141,7 +141,7 @@ export default function ProjectForm({ isOpen, onSubmit, onCancel } = {}) {
           <label htmlFor="githubUrl">GitHub URL</label>
           <input
             id="githubUrl"
-            aria-label="GitHub URL"
+            placeholder="GitHub URL"
             value={githubUrl || ""}
             onChange={(e) => setGithubUrl(e.target.value || null)}
             className="border p-2 rounded w-full"

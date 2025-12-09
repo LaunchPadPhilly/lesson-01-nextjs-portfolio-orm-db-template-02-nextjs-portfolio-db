@@ -1,11 +1,13 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
+
 const SUGGESTED_TECHNOLOGIES = [
   'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Express',
   'HTML', 'CSS', 'Tailwind CSS', 'Bootstrap', 'Python', 'JSON Server',
   'PostgreSQL', 'MongoDB', 'MySQL', 'Prisma', 'ESLint', 'OpenAI API',
   'Git', 'Docker', 'AWS', 'Vercel', 'Vite', 'React Router', 'Firebase',
-  'TanStack Query', 'Lucide React'
+  'TanStack Query', 'Lucide React',
+
 ].sort((a, b) => a.localeCompare(b));
 export default function TechnologyInput({ technologies = [], onChange, error }) {
   const [inputValue, setInputValue] = useState('');
